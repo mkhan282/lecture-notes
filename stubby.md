@@ -98,10 +98,14 @@ let foo = [];
 // ...and unlike it's Java counterpart, is very useful! :)
 foo[0] = "huzzay!"; // what's in here?
 
-// of course, NOTHING is as it seems in JS land...
-foo[5] = "hmmmm"; // what's in foo now? THIS IS VERY SURPRISING
+// we can also do things this way
+let bar = new Array(6); // what do you suppose is in this array?
 
-// we can make an array that
+let qux = new Array("my", "dog", "has", "fleas"); // this one?
+
+let baz = new Array(6, 2); // and this one?
+
+// this behaviour is...unexpected. You might wanna avoid using Array().
 ```
 
 ### BATTERIES INCLUDED
@@ -119,14 +123,41 @@ console.log(arr.length); // 4. No surprises here, folks.
 Unlike Java's arrays, JS's arrays come with a bunch of useful methods built-in.
 (Kind of like Java's ArrayList.)
 
+Unfortunately, we're not going to get to a lot of the super-duper-useful ones until we hit chapter 10 (after Reading Week)...but there are still some nice ones available for the time being:
+
+```javascript
+const arr = [1, 2, 3];
+
+arr.push(4); // What did this do? What does it return? Why "push"?
+array.pop(); // What did this do? What does it return? Why "pop"?
+
+// if you find these next 2 hard to remember, get in line
+arr.shift(8); // What did this do? What does it return?
+arr.unshift(12); // What did this do? What does it return?
+
+// Q: Are you surprised that these work on a const?!?!
+```
+
+> _There are more. Read and play 'round! As always, MDN is your friend._
+
 Because arrays are the collection of choice in JS, you will likely use them a bunch. Getting to know the JS array API is time _definitely_ well-spent. The Execute Code site can help a lot here. And if you get confused by `reduce`, get in line.
 
-### OH YOU KOOKY JS
+### spread operator (very useful!)
+
+### 8.6.1 iterating through arrays (important)
+
+### 8.6.2 destructuring (sometimes useful)
+
+### DETOUR: OH YOU KOOKY JS
 
 Some things about JS arrays can be surprising.
 
-// negative indexes
+// they're not what you think they are. Try "typeof (array)"
+// negative indexes  
 // empty slots (can you iterate over them? how about if we use Array(x)?)
+
+// of course, NOTHING is as it seems in JS land...
+foo[5] = "hmmmm"; // what's in foo now? THIS IS VERY SURPRISING
 
 - you can put disparate types in a JS array:
 
@@ -136,7 +167,9 @@ let mixy = ["foo", 12, true, [1, 2, 3]];
 
 Of course, just because you _can_ do something doesn't mean you _should_ do it.
 
-## Objects
+## 8.7 Objects (SUPER-DUPER IMPORTANT)
+
+### 8.7.1 Object Creation
 
 - the objects keys are strings (we'll pretend Symbols don't exists)
   - if you wanna have keys that have spaces/dashes/etc, surround with quotes...and then you can only access with `[]` notation instead of dot notation
