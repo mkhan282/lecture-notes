@@ -5,3 +5,4 @@ These are just the notes I use when I'm doing our online lectures. They're not m
 - [lec-01](01-2021-09-09-thu.md) (intro)
 - [lec-02](02-2021-09-14-tue.md)
 - [lec-03](03-2021-09-16-thu.md)
+- [lec-04](04-2021-09-21-tue.md)
